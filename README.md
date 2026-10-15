@@ -1,9 +1,12 @@
-# Plataforma Web de Gestion de Tutorias
+# Plataforma Web de Gestion de Tutorias - Rama test
 
-Prototipo web frontend (HTML5 y CSS) para la gestion y reserva de tutorias.
-Practica academica de simulacion agil con Scrum y control de versiones en FP.
+Entorno de pruebas y control de calidad (QA) para validacion de prototipos.
 
-### Estructura de Ramas
-- main: Codigo estable y consolidado.
-- dev: Rama central de desarrollo e integracion.
-- test: Rama de pruebas y control de calidad (QA).
+### Protocolo de Validacion (QA)
+- Comprobar correspondencia visual con los wireframes y requerimientos pactados.
+- Verificar navegacion entre vistas (index.html y login.html) sin enlaces rotos.
+- Validar responsividad basica en resoluciones de escritorio y dispositivos moviles.
+- Certificar el cierre tecnico de la tarea en Taiga antes de autorizar la promocion a main.
+
+### Criterio de Promocion
+Todo cambio verificado sin incidencias se integra en la rama main como entrega final oficial.
