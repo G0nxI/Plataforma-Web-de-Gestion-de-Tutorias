@@ -1,12 +1,9 @@
-# Plataforma Web de Gestion de Tutorias - Rama dev
+# Plataforma Web de Gestion de Tutorias
 
-Entorno de desarrollo activo e integracion de maquetaciones frontend.
+Prototipo web frontend (HTML5 y CSS) para la gestion y reserva de tutorias.
+Practica academica de simulacion agil con Scrum y control de versiones en FP.
 
-### Directrices para Desarrolladores (DEV)
-- Trabajar exclusivamente sobre maquetacion HTML5 semantica y hojas de estilo CSS.
-- No implementar logica de backend ni scripts complejos.
-- Documentar cada tarea en Taiga siguiendo el formato estandar: Objetivo, Acciones realizadas y Resultado esperado.
-- Vincular el identificador de la tarea de Taiga en los mensajes de commit (ej: [#13] descripcion).
-
-### Flujo de Trabajo
-Una vez maquetadas y validadas localmente las vistas, se solicita integracion hacia la rama test para control de calidad.
+### Estructura de Ramas
+- main: Codigo estable y consolidado.
+- dev: Rama central de desarrollo e integracion.
+- test: Rama de pruebas y control de calidad (QA).
