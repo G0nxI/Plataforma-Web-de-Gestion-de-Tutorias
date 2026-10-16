@@ -1,12 +1,12 @@
-# Plataforma Web de Gestion de Tutorias - Rama dev
+# Plataforma Web de Gestion de Tutorias - Rama test
 
-Entorno de desarrollo activo e integracion de maquetaciones frontend.
+Entorno de pruebas y control de calidad (QA) para validacion de prototipos.
 
-### Directrices para Desarrolladores (DEV)
-- Trabajar exclusivamente sobre maquetacion HTML5 semantica y hojas de estilo CSS.
-- No implementar logica de backend ni scripts complejos.
-- Documentar cada tarea en Taiga siguiendo el formato estandar: Objetivo, Acciones realizadas y Resultado esperado.
-- Vincular el identificador de la tarea de Taiga en los mensajes de commit (ej: [#13] descripcion).
+### Protocolo de Validacion (QA)
+- Comprobar correspondencia visual con los wireframes y requerimientos pactados.
+- Verificar navegacion entre vistas (index.html y login.html) sin enlaces rotos.
+- Validar responsividad basica en resoluciones de escritorio y dispositivos moviles.
+- Certificar el cierre tecnico de la tarea en Taiga antes de autorizar la promocion a main.
 
-### Flujo de Trabajo
-Una vez maquetadas y validadas localmente las vistas, se solicita integracion hacia la rama test para control de calidad.
+### Criterio de Promocion
+Todo cambio verificado sin incidencias se integra en la rama main como entrega final oficial.
