@@ -1,93 +1,109 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TutoríasEspinosa</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
+
     <header class="cabecera">
         <div class="contenedor navegacion">
-            <a class="logo" href="#">
-                <span class="icono-logo"><img src="./imagenes/logo-tutorias.png" width="50px"></span>
+            <!-- Identidad: nombre provisional hasta la decision del PO -->
+            <a class="logo" href="./index.html" aria-label="Ir a la pagina principal">
+                <span class="icono-logo">
+                    <img src="./imagenes/logo-tutorias.png" width="50" alt="">
+                </span>
                 <span>Tutorías<span class="azul">Espinosa</span></span>
             </a>
 
-            <nav class="menu">
-                <a class="activo" href="#">Inicio</a>
+            <!-- Rutas de Horarios, Reservas y Profesores: revision en tarea #15 -->
+            <nav class="menu" aria-label="Navegación principal">
+                <a class="activo" href="./index.html" aria-current="page">Inicio</a>
                 <a href="#horarios">Horarios</a>
-                <a href="#reservas">Mis reservas</a>
+                <a href="#reservas">Reservas</a>
                 <a href="#profesores">Profesores</a>
             </nav>
 
             <div class="botones-cabecera">
-                <a class="boton boton-claro" href="#">Iniciar sesión</a>
-                <a class="boton boton-azul" href="#">Registrarse</a>
+                <a class="boton boton-claro" href="./login.html">Iniciar sesión</a>
             </div>
         </div>
     </header>
 
+
     <main>
-     <div class="fondo">
-        <section class="tarjeta-centro contenedor">
-            <div class="tarjeta-centro-texto">
-                <span class="etiqueta">Plataforma de Gestión de Tutorías</span>
-                <h1>Conecta con tus profesores<br class="salto"> y resuelve tus dudas</h1>
-                <p>
-                    En TutoríasPro puedes consultar los horarios disponibles,
-                    reservar tus tutorías, gestionar tus citas y dejar comentarios
-                    sobre las dudas que necesitas resolver.
-                </p>
-                <div class="tarjeta-centro-botones">
-                    <a class="boton boton-azul" href="#horarios">Ver horarios disponibles</a>
-                    <a class="boton boton-claro" href="#funciones">Cómo funciona</a>
+        <div class="fondo">
+            <section class="tarjeta-centro contenedor" aria-labelledby="titulo-bienvenida">
+                <div class="tarjeta-centro-texto">
+                    <span class="etiqueta">Plataforma de Gestión de Tutorías</span>
+                    <h1 id="titulo-bienvenida">Bienvenido</h1>
+                    <p>
+                        Accede a la información de tutorías, consulta horarios,
+                        reserva tu cita y recibe el apoyo que necesitas de forma rápida y sencilla.
+                    </p>
+                    <div class="tarjeta-centro-botones">
+                        <a class="boton boton-azul" href="#horarios">Ver horarios</a>
+                        <a class="boton boton-claro" href="#funciones">Cómo funciona</a>
+                    </div>
                 </div>
-            </div>
 
-            <div class="tarjeta-centro-imagen">
-    <img
-        class="imagenIndex"
-        src="./imagenes/ilustracion-inicio.png"
-        alt="Ilustración de TutoríasPro"
-    >
-</div>
-        </section>
-     </div>
+                <div class="tarjeta-centro-imagen">
+                    <img
+                        class="imagenIndex"
+                        src="./imagenes/ilustracion-inicio.png"
+                        alt="Ilustración de presentación de la plataforma"
+                    >
+                </div>
+            </section>
+        </div>
 
-        <section class="funciones contenedor" id="funciones">
+        <section class="funciones contenedor" id="funciones" aria-labelledby="titulo-funciones">
             <div class="titulo-seccion">
-                <h2>¿Qué puedes hacer?</h2>
-                <p>Accede rápidamente a las funcionalidades principales de la plataforma.</p>
+                <h2 id="titulo-funciones">Explicar funcionalidades</h2>
+                <p>Descubre todo lo que puedes hacer en la Plataforma de Gestión de Tutorías.</p>
             </div>
 
             <div class="tarjetas">
                 <article class="tarjeta tarjeta-azul" id="horarios">
-                    <div class="icono icono-azul"><img src="./imagenes/icono-horarios.png" width="70%" height="70%"></div>
+                    <div class="icono icono-azul">
+                        <img src="./imagenes/icono-horarios.png" width="70%" height="70%" alt="">
+                    </div>
                     <h3>Consultar horarios</h3>
-                    <p>Revisa los horarios de tutoría disponibles de los profesores.</p>
-                    <a href="#">→</a>
+                    <p>Consulta los horarios disponibles de las tutorías según tu perfil.</p>
+                    <!-- Destino definitivo pendiente de la tarea #15 -->
+                    <a href="#horarios" aria-label="Consultar horarios">Ver horarios</a>
                 </article>
 
                 <article class="tarjeta tarjeta-verde">
-                    <div class="icono icono-verde"><img src="./imagenes/icono-reservar-tutoria.png" width="80%" height="80%"></div>
-                    <h3>Reservar tutoría</h3>
-                    <p>Selecciona un horario y confirma tu cita con el profesor.</p>
-                    <a href="#">→</a>
+                    <div class="icono icono-verde">
+                        <img src="./imagenes/icono-reservar-tutoria.png" width="80%" height="80%" alt="">
+                    </div>
+                    <h3>Reservar tutorías</h3>
+                    <p>Reserva tu tutoría de forma sencilla y rápida.</p>
+                    <a href="#reservas" aria-label="Reservar una tutoría">Reservar ahora</a>
                 </article>
 
                 <article class="tarjeta tarjeta-morada" id="reservas">
-                    <div class="icono icono-morado"><img src="./imagenes/icono-mis-reservas.png" width="70%" height="70%"></div>
+                    <div class="icono icono-morado">
+                        <img src="./imagenes/icono-mis-reservas.png" width="70%" height="70%" alt="">
+                    </div>
                     <h3>Mis reservas</h3>
-                    <p>Consulta, cancela o gestiona tus tutorías reservadas.</p>
-                    <a href="#">→</a>
+                    <p>Consulta y gestiona tus reservas activas y pasadas.</p>
+                    <a href="#reservas" aria-label="Consultar mis reservas">Ver mis reservas</a>
                 </article>
 
-                <article class="tarjeta tarjeta-naranja" id="profesores">
-                    <div class="icono icono-naranja"><img src="./imagenes/icono-comentarios.png" width="70%" height="70%"></div>
+                <article class="tarjeta tarjeta-naranja" id="comentarios">
+                    <div class="icono icono-naranja">
+                        <img src="./imagenes/icono-comentarios.png" width="70%" height="70%" alt="">
+                    </div>
                     <h3>Dejar comentarios</h3>
-                    <p>Añade las dudas que quieres resolver en tu tutoría.</p>
-                    <a href="#">→</a>
+                    <p>Comparte tu opinión y ayuda a mejorar el servicio.</p>
+                    <!-- Destino definitivo pendiente de la tarea #15 -->
+                    <a href="#comentarios" aria-label="Dejar un comentario">Dejar comentario</a>
                 </article>
             </div>
         </section>
@@ -95,18 +111,21 @@
 
     <footer class="pie">
         <div class="contenedor pie-contenido">
-            <a class="logo logo-pie" href="#">
-                <span class="icono-logo"><img src="./imagenes/logo-tutorias.png" width="50px"></span>
+            <a class="logo logo-pie" href="./index.html" aria-label="Volver al inicio">
+                <span class="icono-logo">
+                    <img src="./imagenes/logo-tutorias.png" width="50" alt="">
+                </span>
                 <span>TutoríasEspinosa</span>
             </a>
-            <nav class="enlaces-pie">
-                <a href="#">Inicio</a>
+            <nav class="enlaces-pie" aria-label="Navegación del pie">
+                <a href="./index.html">Inicio</a>
                 <a href="#horarios">Horarios</a>
-                <a href="#reservas">Mis reservas</a>
+                <a href="#reservas">Reservas</a>
                 <a href="#profesores">Profesores</a>
             </nav>
-            <p>© 2025 TutoríasEspinosa. Todos los derechos reservados.</p>
+            <p>© 2026 Plataforma de Gestión de Tutorías. Todos los derechos reservados.</p>
         </div>
     </footer>
 </body>
+
 </html>
