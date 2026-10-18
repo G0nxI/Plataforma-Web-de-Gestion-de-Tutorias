@@ -210,6 +210,9 @@ h1 {
 }
 .icono-azul, .icono-verde, .icono-morado, .icono-naranja { background: var(--color-suave); }
 .icono img { max-width: 78%; max-height: 78%; object-fit: contain; }
+/* Tamano de los iconos de las tarjetas, definido en CSS. */
+.icono-imagen-70 { width: 70%; height: 70%; }
+.icono-imagen-80 { width: 80%; height: 80%; }
 .tarjeta h3 { margin: 0 0 6px; font-size: 17px; line-height: 1.25; }
 .tarjeta p {
   margin: 0 0 var(--espacio-3);
