@@ -95,8 +95,8 @@
                     <!-- Zona estable para mensajes, incluidos errores accesibles. -->
                     <p class="login-mensaje" id="login-mensaje" role="alert" hidden></p>
 
-                    <!-- #18: estructura solamente. Se habilita la interacción en #20. -->
-                    <button type="button" class="boton boton-azul login-submit" id="login-enviar">
+                    <!-- #20: el envio se intercepta localmente; no se envian credenciales. -->
+                    <button type="submit" class="boton boton-azul login-submit" id="login-enviar">
                         Iniciar sesión
                     </button>
                 </form>
@@ -128,5 +128,6 @@
     </div>
 
     <script src="./js/main.js" defer></script>
+    <script src="./js/login.js" defer></script>
 </body>
 </html>
