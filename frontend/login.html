@@ -5,74 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar sesión - TutoríasEspinosa</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/navegacion.css">
     <link rel="stylesheet" href="./css/login.css">
 </head>
 <body>
-
-    <!-- HEADER ORIGINAL: SIN MODIFICACIONES -->
+    <!-- Misma cabecera compartida visualmente con la página principal. -->
     <header class="cabecera">
         <div class="contenedor navegacion">
-            <a class="logo" href="#">
-                <span class="icono-logo"><img src="./imagenes/logo-tutorias.png" width="50px"></span>
+            <a class="logo" href="./index.html" aria-label="Volver a la página principal">
+                <span class="icono-logo"><img src="./imagenes/logo-tutorias.png" width="50" alt=""></span>
                 <span>Tutorías<span class="azul">Espinosa</span></span>
             </a>
 
-            <nav class="menu">
-                <a class="activo" href="#">Inicio</a>
-                <a href="#horarios">Horarios</a>
-                <a href="#reservas">Mis reservas</a>
-                <a href="#profesores">Profesores</a>
+            <button
+                id="boton-menu"
+                class="menu-toggle"
+                type="button"
+                aria-controls="menu-principal"
+                aria-expanded="false"
+                aria-label="Abrir menú de navegación"
+            >
+                <span class="menu-toggle__icono" aria-hidden="true">&#9776;</span>
+                <span>Menú</span>
+            </button>
+
+            <nav class="menu" id="menu-principal" aria-label="Navegación principal">
+                <a href="./index.html">Inicio</a>
+                <a href="./index.html#horarios">Horarios</a>
+                <a href="./index.html#reservas">Reservas</a>
+                <a href="./index.html" data-proximo="profesores">Profesores</a>
             </nav>
 
             <div class="botones-cabecera">
-                <a class="boton boton-claro" href="login.html">
-                    Iniciar sesión
-                </a>
-                <a class="boton boton-azul" href="#">
-                    Registrarse
-                </a>
+                <a class="boton boton-claro activo" href="./login.html" aria-current="page">Iniciar sesión</a>
             </div>
         </div>
     </header>
 
-    <!-- CONTENIDO PRINCIPAL: LOGIN -->
-    <main class="login-fondo">
-        <section class="login-contenedor">
-
+    <main class="login-fondo" id="contenido-principal">
+        <section class="login-contenedor" aria-labelledby="login-titulo">
             <div class="login-tarjeta">
+                <div class="login-icono" aria-hidden="true">
+                    <img src="./imagenes/logo-tutorias.png" alt="">
+                </div>
 
-                <div class="login-icono"><img src="./imagenes/logo-tutorias.png" width="70%"></div>
-
-                <span class="login-etiqueta">
-                    Plataforma de Gestión de Tutorías
-                </span>
-
-                <h1>¡Bienvenido de nuevo!</h1>
-
+                <span class="login-etiqueta">Plataforma de Gestión de Tutorías</span>
+                <h1 id="login-titulo">¡Bienvenido de nuevo!</h1>
                 <p class="login-descripcion">
-                    Inicia sesión para gestionar tus tutorías,
-                    consultar horarios y conectar con tus profesores.
+                    Inicia sesión para consultar tus horarios y gestionar tus tutorías.
                 </p>
 
-                <form class="login-formulario" action="#" method="post">
-
+                <!-- La autenticación real se conectará en una fase posterior. -->
+                <form class="login-formulario" id="login-formulario" novalidate>
                     <div class="login-campo">
-                        <label for="correo">Correo electrónico</label>
+                        <label for="login-identificador">Correo electrónico o usuario</label>
                         <input
-                            type="email"
-                            id="correo"
-                            name="correo"
-                            placeholder="ejemplo@correo.com"
-                            autocomplete="email"
+                            type="text"
+                            id="login-identificador"
+                            name="identificador"
+                            placeholder="Introduce tu correo o usuario"
+                            autocomplete="username"
+                            spellcheck="false"
                             required
                         >
                     </div>
 
                     <div class="login-campo">
-                        <label for="contrasena">Contraseña</label>
+                        <label for="login-contrasena">Contraseña</label>
                         <input
                             type="password"
-                            id="contrasena"
+                            id="login-contrasena"
                             name="contrasena"
                             placeholder="Introduce tu contraseña"
                             autocomplete="current-password"
@@ -81,57 +83,50 @@
                     </div>
 
                     <div class="login-opciones">
-                        <label class="login-recordar">
-                            <input type="checkbox" name="recordar">
+                        <label class="login-recordar" for="login-recordar">
+                            <input type="checkbox" id="login-recordar" name="recordar">
                             <span>Recordarme</span>
                         </label>
-
-                        <a href="#" class="login-enlace">
+                        <button type="button" class="login-enlace" id="login-recuperar">
                             ¿Olvidaste tu contraseña?
-                        </a>
+                        </button>
                     </div>
 
-                    <button type="submit" class="boton boton-azul login-submit">
+                    <!-- Zona estable para mensajes, incluidos errores accesibles. -->
+                    <p class="login-mensaje" id="login-mensaje" role="alert" hidden></p>
+
+                    <!-- #18: estructura solamente. Se habilita la interacción en #20. -->
+                    <button type="button" class="boton boton-azul login-submit" id="login-enviar">
                         Iniciar sesión
                     </button>
-
                 </form>
-
-                <div class="login-separador">
-                    <span>¿Todavía no tienes una cuenta?</span>
-                </div>
-
-                <a href="#" class="boton boton-claro login-registro">
-                    Crear una cuenta
-                </a>
-
             </div>
 
-            <p class="login-pie-texto">
-                Tu espacio para aprender, resolver dudas y avanzar.
-            </p>
-
+            <p class="login-pie-texto">Tu espacio para aprender, resolver dudas y avanzar.</p>
         </section>
     </main>
 
-    <!-- FOOTER ORIGINAL: SIN MODIFICACIONES -->
     <footer class="pie">
         <div class="contenedor pie-contenido">
-            <a class="logo logo-pie" href="#">
-                <span class="icono-logo"><img src="./imagenes/logo-tutorias.png" width="50px"></span>
+            <a class="logo logo-pie" href="./index.html" aria-label="Volver al inicio">
+                <span class="icono-logo"><img src="./imagenes/logo-tutorias.png" width="50" alt=""></span>
                 <span>TutoríasEspinosa</span>
             </a>
-
-            <nav class="enlaces-pie">
-                <a href="#">Inicio</a>
-                <a href="#horarios">Horarios</a>
-                <a href="#reservas">Mis reservas</a>
-                <a href="#profesores">Profesores</a>
+            <nav class="enlaces-pie" aria-label="Navegación del pie">
+                <a href="./index.html">Inicio</a>
+                <a href="./index.html#horarios">Horarios</a>
+                <a href="./index.html#reservas">Reservas</a>
+                <a href="./index.html" data-proximo="profesores">Profesores</a>
             </nav>
-
-            <p>© 2025 TutoríasEspinosa. Todos los derechos reservados.</p>
+            <p>© 2026 Plataforma de Gestión de Tutorías. Todos los derechos reservados.</p>
         </div>
     </footer>
 
+    <div id="aviso-navegacion" class="aviso-navegacion" role="status" aria-live="polite" hidden>
+        <p class="aviso-navegacion__texto"></p>
+        <button type="button" class="aviso-navegacion__cerrar" aria-label="Cerrar aviso">&times;</button>
+    </div>
+
+    <script src="./js/main.js" defer></script>
 </body>
 </html>
