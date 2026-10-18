@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión - TutoríasEspinosa</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+
+    <!-- HEADER ORIGINAL: SIN MODIFICACIONES -->
+    <header class="cabecera">
+        <div class="contenedor navegacion">
+            <a class="logo" href="#">
+                <span class="icono-logo"><img src="./imagenes/logo-tutorias.png" width="50px"></span>
+                <span>Tutorías<span class="azul">Espinosa</span></span>
+            </a>
+
+            <nav class="menu">
+                <a class="activo" href="#">Inicio</a>
+                <a href="#horarios">Horarios</a>
+                <a href="#reservas">Mis reservas</a>
+                <a href="#profesores">Profesores</a>
+            </nav>
+
+            <div class="botones-cabecera">
+                <a class="boton boton-claro" href="login.html">
+                    Iniciar sesión
+                </a>
+                <a class="boton boton-azul" href="#">
+                    Registrarse
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL: LOGIN -->
+    <main class="login-fondo">
+        <section class="login-contenedor">
+
+            <div class="login-tarjeta">
+
+                <div class="login-icono"><img src="./imagenes/logo-tutorias.png" width="70%"></div>
+
+                <span class="login-etiqueta">
+                    Plataforma de Gestión de Tutorías
+                </span>
+
+                <h1>¡Bienvenido de nuevo!</h1>
+
+                <p class="login-descripcion">
+                    Inicia sesión para gestionar tus tutorías,
+                    consultar horarios y conectar con tus profesores.
+                </p>
+
+                <form class="login-formulario" action="#" method="post">
+
+                    <div class="login-campo">
+                        <label for="correo">Correo electrónico</label>
+                        <input
+                            type="email"
+                            id="correo"
+                            name="correo"
+                            placeholder="ejemplo@correo.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="login-campo">
+                        <label for="contrasena">Contraseña</label>
+                        <input
+                            type="password"
+                            id="contrasena"
+                            name="contrasena"
+                            placeholder="Introduce tu contraseña"
+                            autocomplete="current-password"
+                            required
+                        >
+                    </div>
+
+                    <div class="login-opciones">
+                        <label class="login-recordar">
+                            <input type="checkbox" name="recordar">
+                            <span>Recordarme</span>
+                        </label>
+
+                        <a href="#" class="login-enlace">
+                            ¿Olvidaste tu contraseña?
+                        </a>
+                    </div>
+
+                    <button type="submit" class="boton boton-azul login-submit">
+                        Iniciar sesión
+                    </button>
+
+                </form>
+
+                <div class="login-separador">
+                    <span>¿Todavía no tienes una cuenta?</span>
+                </div>
+
+                <a href="#" class="boton boton-claro login-registro">
+                    Crear una cuenta
+                </a>
+
+            </div>
+
+            <p class="login-pie-texto">
+                Tu espacio para aprender, resolver dudas y avanzar.
+            </p>
+
+        </section>
+    </main>
+
+    <!-- FOOTER ORIGINAL: SIN MODIFICACIONES -->
+    <footer class="pie">
+        <div class="contenedor pie-contenido">
+            <a class="logo logo-pie" href="#">
+                <span class="icono-logo"><img src="./imagenes/logo-tutorias.png" width="50px"></span>
+                <span>TutoríasEspinosa</span>
+            </a>
+
+            <nav class="enlaces-pie">
+                <a href="#">Inicio</a>
+                <a href="#horarios">Horarios</a>
+                <a href="#reservas">Mis reservas</a>
+                <a href="#profesores">Profesores</a>
+            </nav>
+
+            <p>© 2025 TutoríasEspinosa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
