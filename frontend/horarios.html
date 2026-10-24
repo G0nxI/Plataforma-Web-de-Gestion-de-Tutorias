@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consulta las franjas horarias disponibles de los tutores de la Plataforma de Gestión de Tutorías.">
+    <title>Horarios de tutorías - TutoríasEspinosa</title>
+    <!-- Primero los estilos compartidos; después, los exclusivos de esta página. -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/navegacion.css">
+    <link rel="stylesheet" href="./css/horarios.css">
+</head>
+<body>
+    <!-- Cabecera coherente con index.html y login.html de la rama test. -->
+    <header class="cabecera">
+        <div class="contenedor navegacion">
+            <a class="logo" href="./index.html" aria-label="Volver a la página principal">
+                <span class="icono-logo"><img src="./imagenes/logo-tutorias.png" width="50" alt=""></span>
+                <span>Tutorías<span class="azul">Espinosa</span></span>
+            </a>
+
+            <!-- main.js gestiona el menú móvil; no duplicamos esta lógica. -->
+            <button
+                id="boton-menu"
+                class="menu-toggle"
+                type="button"
+                aria-controls="menu-principal"
+                aria-expanded="false"
+                aria-label="Abrir menú de navegación"
+            >
+                <span class="menu-toggle__icono" aria-hidden="true">&#9776;</span>
+                <span>Menú</span>
+            </button>
+
+            <nav class="menu" id="menu-principal" aria-label="Navegación principal">
+                <a href="./index.html">Inicio</a>
+                <a class="activo" href="./horarios.html" aria-current="page">Horarios</a>
+                <a href="./login.html" data-proximo="reservas">Reservas</a>
+                <a href="./login.html" data-proximo="profesores">Profesores</a>
+            </nav>
+            <div class="botones-cabecera">
+                <a class="boton boton-claro" href="./login.html">Iniciar sesión</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="horarios-main" id="contenido-principal">
+        <div class="contenedor">
+            <!-- 1. Presentación: misma retícula de dos columnas que el Index. -->
+            <section class="horarios-hero" aria-labelledby="horarios-titulo">
+                <div class="horarios-hero__texto">
+                    <span class="etiqueta">Plataforma de Gestión de Tutorías</span>
+                    <h1 id="horarios-titulo">Horarios para tutorías</h1>
+                    <p>
+                        Consulta los horarios de los tutores y encuentra las franjas
+                        disponibles para planificar tu próxima tutoría.
+                    </p>
+                    <div class="horarios-ayuda">
+                        <span class="horarios-ayuda__icono" aria-hidden="true">i</span>
+                        <div>
+                            <strong>¿Cómo funciona?</strong>
+                            <p>Selecciona un tutor para consultar su disponibilidad semanal. Las horas libres se distinguen de las ocupadas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="horarios-hero__imagen">
+                    <img src="./imagenes/ilustracion-inicio.png" alt="Ilustración de la plataforma de tutorías">
+                </div>
+            </section>
+
+            <!-- 2. Selector de tutor: botones en escritorio y select accesible en móvil. -->
+            <section class="horarios-seccion horarios-selector" aria-labelledby="horarios-selector-titulo">
+                <h2 id="horarios-selector-titulo">Selecciona un tutor</h2>
+                <p>Elige un tutor para consultar sus horarios y disponibilidad.</p>
+                <div class="horarios-lista-tutores" role="group" aria-label="Tutores disponibles">
+                    <button class="horarios-tutor is-selected" type="button" data-tutor="1" aria-pressed="true">Tutor 1</button>
+                    <button class="horarios-tutor" type="button" data-tutor="2" aria-pressed="false">Tutor 2</button>
+                    <button class="horarios-tutor" type="button" data-tutor="3" aria-pressed="false">Tutor 3</button>
+                    <button class="horarios-tutor" type="button" data-tutor="4" aria-pressed="false">Tutor 4</button>
+                    <button class="horarios-tutor" type="button" data-tutor="5" aria-pressed="false">Tutor 5</button>
+                    <button class="horarios-tutor" type="button" data-tutor="6" aria-pressed="false">Tutor 6</button>
+                    <button class="horarios-tutor" type="button" data-tutor="7" aria-pressed="false">Tutor 7</button>
+                </div>
+                <label class="horarios-selector-movil" for="horarios-elegir-tutor">Tutor</label>
+                <select class="horarios-select" id="horarios-elegir-tutor">
+                    <option value="1">Tutor 1 — García Hernández</option>
+                    <option value="2">Tutor 2 — López Martín</option>
+                    <option value="3">Tutor 3 — Ruiz Pérez</option>
+                    <option value="4">Tutor 4 — Gómez Navarro</option>
+                    <option value="5">Tutor 5 — Morales Ortega</option>
+                    <option value="6">Tutor 6 — Sánchez Romero</option>
+                    <option value="7">Tutor 7 — Díaz Fernández</option>
+                </select>
+            </section>
+
+            <!-- 3. Ficha de demostración, actualizada al cambiar de tutor. -->
+            <section class="horarios-seccion horarios-ficha" aria-label="Información del tutor seleccionado">
+                <span class="horarios-avatar" aria-hidden="true"></span>
+                <dl class="horarios-ficha__datos">
+                    <div><dt>Nombre:</dt><dd id="horarios-nombre">Tutor 1</dd></div>
+                    <div><dt>Apellidos:</dt><dd id="horarios-apellidos">García Hernández</dd></div>
+                    <div><dt>Horario de trabajo:</dt><dd>De 8:30 a 15:00</dd></div>
+                    <div><dt>Horas disponibles:</dt><dd id="horarios-disponibles">15</dd></div>
+                </dl>
+            </section>
+
+            <!-- 4. Disponibilidad por días. El contenido parte de un ejemplo estático;
+                 horarios.js lo mantiene actualizado si se cambia el tutor. -->
+            <section class="horarios-seccion horarios-disponibilidad" aria-labelledby="horarios-tabla-titulo">
+                <div class="horarios-disponibilidad__cabecera">
+                    <div>
+                        <h2 id="horarios-tabla-titulo">Disponibilidad semanal</h2>
+                        <p>Consulta las franjas horarias del tutor seleccionado.</p>
+                    </div>
+                    <div class="horarios-leyenda" aria-label="Leyenda de estados">
+                        <span><span class="horarios-punto horarios-punto--libre" aria-hidden="true"></span> Disponible</span>
+                        <span><span class="horarios-punto horarios-punto--ocupado" aria-hidden="true"></span> Ocupado</span>
+                    </div>
+                </div>
+                <p class="horarios-demostracion">Datos de demostración: no son horarios en tiempo real.</p>
+                <p class="horarios-deslizar" id="horarios-deslizar">Desliza la tabla horizontalmente para consultar todos los días.</p>
+                <div class="horarios-tabla-scroll" role="region" tabindex="0" aria-label="Tabla de horarios semanales; desplazamiento horizontal disponible" aria-describedby="horarios-deslizar">
+                    <table class="horarios-tabla">
+                        <caption class="horarios-sr-only">Disponibilidad de lunes a viernes para el tutor seleccionado. Selecciona una hora libre para conocer el estado de la reserva.</caption>
+                        <thead>
+                            <tr><th scope="col">Horario</th><th scope="col">Lunes</th><th scope="col">Martes</th><th scope="col">Miércoles</th><th scope="col">Jueves</th><th scope="col">Viernes</th></tr>
+                        </thead>
+                        <tbody id="horarios-cuerpo">
+                            <tr><th scope="row">8:30–9:30</th><td><button type="button" class="horarios-hora horarios-hora--libre" data-dia="Lunes" data-hora="8:30–9:30">Disponible</button></td><td><span class="horarios-hora horarios-hora--ocupada">Ocupado</span></td><td><button type="button" class="horarios-hora horarios-hora--libre" data-dia="Miércoles" data-hora="8:30–9:30">Disponible</button></td><td><span class="horarios-hora horarios-hora--ocupada">Ocupado</span></td><td><button type="button" class="horarios-hora horarios-hora--libre" data-dia="Viernes" data-hora="8:30–9:30">Disponible</button></td></tr>
+                            <tr><th scope="row">9:30–10:30</th><td><button type="button" class="horarios-hora horarios-hora--libre" data-dia="Lunes" data-hora="9:30–10:30">Disponible</button></td><td><button type="button" class="horarios-hora horarios-hora--libre" data-dia="Martes" data-hora="9:30–10:30">Disponible</button></td><td><button type="button" class="horarios-hora horarios-hora--libre" data-dia="Miércoles" data-hora="9:30–10:30">Disponible</button></td><td><span class="horarios-hora horarios-hora--ocupada">Ocupado</span></td><td><button type="button" class="horarios-hora horarios-hora--libre" data-dia="Viernes" data-hora="9:30–10:30">Disponible</button></td></tr>
+                            <tr><th scope="row">10:30–11:30</th><td><span class="horarios-hora horarios-hora--ocupada">Ocupado</span></td><td><span class="horarios-hora horarios-hora--ocupada">Ocupado</span></td><td><span class="horarios-hora horarios-hora--ocupada">Ocupado</span></td><td><span class="horarios-hora horarios-hora--ocupada">Ocupado</span></td><td><button type="button" class="horarios-hora horarios-hora--libre" data-dia="Viernes" data-hora="10:30–11:30">Disponible</button></td></tr>
+                            <tr><th scope="row">12:00–13:00</th><td><button type="button" class="horarios-hora horarios-hora--libre" data-dia="Lunes" data-hora="12:00–13:00">Disponible</button></td><td><span class="horarios-hora horarios-hora--ocupada">Ocupado</span></td><td><span class="horarios-hora horarios-hora--ocupada">Ocupado</span></td><td><button type="button" class="horarios-hora horarios-hora--libre" data-dia="Jueves" data-hora="12:00–13:00">Disponible</button></td><td><span class="horarios-hora horarios-hora--ocupada">Ocupado</span></td></tr>
+                            <tr><th scope="row">13:00–14:00</th><td><span class="horarios-hora horarios-hora--ocupada">Ocupado</span></td><td><button type="button" class="horarios-hora horarios-hora--libre" data-dia="Martes" data-hora="13:00–14:00">Disponible</button></td><td><button type="button" class="horarios-hora horarios-hora--libre" data-dia="Miércoles" data-hora="13:00–14:00">Disponible</button></td><td><button type="button" class="horarios-hora horarios-hora--libre" data-dia="Jueves" data-hora="13:00–14:00">Disponible</button></td><td><span class="horarios-hora horarios-hora--ocupada">Ocupado</span></td></tr>
+                            <tr><th scope="row">14:00–15:00</th><td><span class="horarios-hora horarios-hora--ocupada">Ocupado</span></td><td><span class="horarios-hora horarios-hora--ocupada">Ocupado</span></td><td><button type="button" class="horarios-hora horarios-hora--libre" data-dia="Miércoles" data-hora="14:00–15:00">Disponible</button></td><td><button type="button" class="horarios-hora horarios-hora--libre" data-dia="Jueves" data-hora="14:00–15:00">Disponible</button></td><td><span class="horarios-hora horarios-hora--ocupada">Ocupado</span></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p id="horarios-estado" class="horarios-estado" role="status" aria-live="polite" hidden></p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Pie idéntico en estructura al existente en las otras dos páginas. -->
+    <footer class="pie">
+        <div class="contenedor pie-contenido">
+            <a class="logo logo-pie" href="./index.html" aria-label="Volver al inicio">
+                <span class="icono-logo"><img src="./imagenes/logo-tutorias.png" width="50" alt=""></span>
+                <span>TutoríasEspinosa</span>
+            </a>
+            <nav class="enlaces-pie" aria-label="Navegación del pie">
+                <a href="./index.html">Inicio</a>
+                <a href="./horarios.html" aria-current="page">Horarios</a>
+                <a href="./login.html" data-proximo="reservas">Reservas</a>
+                <a href="./login.html" data-proximo="profesores">Profesores</a>
+            </nav>
+            <p>© 2026 Plataforma de Gestión de Tutorías. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Componente existente de notificaciones, utilizado por main.js. -->
+    <div id="aviso-navegacion" class="aviso-navegacion" role="status" aria-live="polite" hidden>
+        <p class="aviso-navegacion__texto"></p>
+        <button type="button" class="aviso-navegacion__cerrar" aria-label="Cerrar aviso">&times;</button>
+    </div>
+    <script src="./js/main.js" defer></script>
+    <script src="./js/horarios.js" defer></script>
+</body>
+</html>
