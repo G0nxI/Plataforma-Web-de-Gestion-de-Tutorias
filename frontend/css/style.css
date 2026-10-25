@@ -1,9 +1,9 @@
 /*
- * Plataforma Web de Gestion de Tutorias
- * Tarea #14 - Adaptacion visual de la pagina principal
- * Referencia: docs/wireframes/pagina-principal (Desktop / Tablet / Mobile + Specs)
- * Solo se modifica frontend/css/style.css; no afecta a login.css.
- * La navegacion real y sus destinos pertenecen a la tarea #15.
+ * Plataforma Web de Gestión de Tutorías
+ * Tarea #14 - Adaptación visual de la página principal.
+ * Referencia: docs/wireframes/pagina-principal (Desktop / Tablet / Mobile + Specs).
+ * Estilos base y compartidos por Index, Login y Horarios.
+ * Los estilos de navegación se complementan con navegacion.css.
  */
 
 :root {
@@ -309,7 +309,7 @@ h1 {
   }
   .navegacion > .logo { min-height: 48px; align-self: flex-start; font-size: 15px; white-space: normal; }
   .navegacion > .logo .icono-logo img { width: 48px; height: 40px; }
-  /* La hamburguesa del wireframe requiere HTML/JS: tarea #15. */
+  /* Distribución responsive del menú; main.js controla su apertura y cierre. */
   .menu {
     order: 0;
     display: grid;
