@@ -1,7 +1,7 @@
 'use strict';
 
-// Tarea #15 - Navegacion del prototipo de la pagina principal.
-// La autenticacion, reservas, comentarios y directorio de profesores aun no existen.
+// Tarea #15 - Navegación y avisos compartidos del frontend.
+// La autenticación, reservas, comentarios y directorio de profesores aún no existen.
 document.addEventListener('DOMContentLoaded', () => {
   const botonMenu = document.getElementById('boton-menu');
   const menu = document.getElementById('menu-principal');
@@ -65,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const mensajesPendientes = {
     profesores: 'El directorio de profesores se incorporará en una fase posterior.',
-    horarios: 'La consulta detallada de horarios aún no está implementada.',
     reservar: 'La reserva de tutorías estará disponible cuando se implemente esta función.',
     reservas: 'La gestión de reservas estará disponible cuando se implemente esta función.',
     comentarios: 'Los comentarios estarán disponibles cuando se implemente esta función.'
