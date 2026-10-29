@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Selecciona un tutor, consulta los horarios disponibles y prepara una reserva de tutoría en el prototipo de TutoríasEspinosa.">
+    <title>Reservar tutoría - TutoríasEspinosa</title>
+    <!-- CSS compartido existente; los estilos nuevos son exclusivos de Reservas. -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/navegacion.css">
+    <link rel="stylesheet" href="./css/reservas.css">
+</head>
+<body>
+    <header class="cabecera">
+        <div class="contenedor navegacion">
+            <a class="logo" href="./index.html" aria-label="Volver a la página principal">
+                <span class="icono-logo"><img src="./imagenes/logo-tutorias.png" width="50" alt=""></span>
+                <span>Tutorías<span class="azul">Espinosa</span></span>
+            </a>
+            <button id="boton-menu" class="menu-toggle" type="button" aria-controls="menu-principal"
+                    aria-expanded="false" aria-label="Abrir menú de navegación">
+                <span class="menu-toggle__icono" aria-hidden="true">&#9776;</span>
+                <span>Menú</span>
+            </button>
+            <nav class="menu" id="menu-principal" aria-label="Navegación principal">
+                <a href="./index.html">Inicio</a>
+                <a href="./horarios.html">Horarios</a>
+                <a class="activo" href="./reservas.html" aria-current="page">Reservas</a>
+                <a href="./login.html" data-proximo="profesores">Profesores</a>
+            </nav>
+            <div class="botones-cabecera">
+                <a class="boton boton-claro" href="./login.html">Iniciar sesión</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="reservas-main" id="contenido-principal">
+        <div class="contenedor">
+            <section class="reservas-presentacion" aria-labelledby="reservas-titulo">
+                <span class="etiqueta">Plataforma de Gestión de Tutorías</span>
+                <h1 id="reservas-titulo">Reservar una tutoría</h1>
+                <p class="reservas-intro">Selecciona un profesor, una fecha y una hora disponible para preparar tu tutoría.</p>
+                <div class="reservas-aviso" role="note">
+                    <span class="reservas-aviso__icono" aria-hidden="true">i</span>
+                    <span>Solo se pueden seleccionar horarios disponibles. Esta pantalla es un <strong>prototipo</strong>: no registra reservas reales.</span>
+                </div>
+            </section>
+
+            <div class="reservas-columnas">
+                <section class="reservas-panel reservas-formulario" aria-labelledby="reservas-seleccion-titulo">
+                    <h2 id="reservas-seleccion-titulo">1. Seleccionar tutoría</h2>
+                    <form id="reservas-form" novalidate>
+                        <div class="reservas-campo">
+                            <label for="reservas-profesor">Profesor</label>
+                            <select id="reservas-profesor" name="profesor" required>
+                                <option value="">Selecciona un profesor</option>
+                                <option value="1">Tutor 1 — García Hernández</option>
+                                <option value="2">Tutor 2 — López Martín</option>
+                                <option value="3">Tutor 3 — Ruiz Pérez</option>
+                                <option value="4">Tutor 4 — Gómez Navarro</option>
+                                <option value="5">Tutor 5 — Morales Ortega</option>
+                                <option value="6">Tutor 6 — Sánchez Romero</option>
+                                <option value="7">Tutor 7 — Díaz Fernández</option>
+                            </select>
+                        </div>
+                        <div class="reservas-campo">
+                            <label for="reservas-fecha">Fecha</label>
+                            <select id="reservas-fecha" name="fecha" required>
+                                <option value="">Cargando días lectivos…</option>
+                            </select>
+                        </div>
+                        <fieldset class="reservas-horas" aria-describedby="reservas-horas-ayuda">
+                            <legend>Horas disponibles</legend>
+                            <div class="reservas-horas__lista" id="reservas-lista-horas" role="group" aria-label="Franjas horarias">
+                                <p class="reservas-placeholder">Selecciona profesor y fecha para consultar las franjas.</p>
+                            </div>
+                            <p id="reservas-horas-ayuda" class="reservas-ayuda">Las franjas ocupadas no se pueden seleccionar.</p>
+                        </fieldset>
+                    </form>
+                </section>
+
+                <aside class="reservas-panel reservas-resumen" aria-labelledby="reservas-resumen-titulo">
+                    <h2 id="reservas-resumen-titulo">2. Resumen de reserva</h2>
+                    <dl class="reservas-resumen__datos">
+                        <div><dt>Profesor:</dt><dd id="reservas-resumen-profesor">Sin seleccionar</dd></div>
+                        <div><dt>Fecha:</dt><dd id="reservas-resumen-fecha">Sin seleccionar</dd></div>
+                        <div><dt>Hora:</dt><dd id="reservas-resumen-hora">Sin seleccionar</dd></div>
+                        <div><dt>Estado:</dt><dd id="reservas-resumen-estado">Incompleta</dd></div>
+                    </dl>
+                    <button class="boton boton-azul reservas-confirmar" type="submit" form="reservas-form"
+                            id="reservas-confirmar" disabled>Confirmar reserva (demo)</button>
+                </aside>
+            </div>
+
+            <section class="reservas-panel reservas-resultado" aria-labelledby="reservas-resultado-titulo">
+                <h2 id="reservas-resultado-titulo">3. Resultado de la operación</h2>
+                <p id="reservas-resultado-texto" role="status" aria-live="polite" aria-atomic="true">
+                    Al confirmar, aquí se mostrará el resultado de la demostración. No se guardará ninguna reserva.
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="pie">
+        <div class="contenedor pie-contenido">
+            <a class="logo logo-pie" href="./index.html" aria-label="Volver al inicio">
+                <span class="icono-logo"><img src="./imagenes/logo-tutorias.png" width="50" alt=""></span>
+                <span>TutoríasEspinosa</span>
+            </a>
+            <nav class="enlaces-pie" aria-label="Navegación del pie">
+                <a href="./index.html">Inicio</a>
+                <a href="./horarios.html">Horarios</a>
+                <a href="./reservas.html" aria-current="page">Reservas</a>
+                <a href="./login.html" data-proximo="profesores">Profesores</a>
+            </nav>
+            <p>© 2026 Plataforma de Gestión de Tutorías. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="aviso-navegacion" class="aviso-navegacion" role="status" aria-live="polite" hidden>
+        <p class="aviso-navegacion__texto"></p>
+        <button type="button" class="aviso-navegacion__cerrar" aria-label="Cerrar aviso">&times;</button>
+    </div>
+    <script src="./js/main.js" defer></script>
+    <script src="./js/reservas.js" defer></script>
+</body>
+</html>
