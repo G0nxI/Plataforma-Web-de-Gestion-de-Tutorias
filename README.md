@@ -1,9 +1,11 @@
-# Plataforma Web de Gestion de Tutorias
-
-Prototipo web frontend (HTML5 y CSS) para la gestion y reserva de tutorias.
-Practica academica de simulacion agil con Scrum y control de versiones en FP.
-
-### Estructura de Ramas
-- main: Codigo estable y consolidado.
-- dev: Rama central de desarrollo e integracion.
-- test: Rama de pruebas y control de calidad (QA).
+> [!WARNING]
+> **Estado del proyecto: Archivado — Desarrollo incompleto**
+>
+> Este proyecto ha sido discontinuado antes de completar todas las funcionalidades previstas.
+>
+> El repositorio se conserva como referencia técnica e histórica, pero no recibirá nuevas actualizaciones, correcciones ni contribuciones.
+>
+> El código permanece disponible para su consulta, descarga y creación de forks, conforme a la licencia del proyecto.
+>
+> **Último estado:** implementación parcial.  
+> **Mantenimiento:** finalizado.
